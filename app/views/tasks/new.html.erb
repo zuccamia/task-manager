@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <div class="col-lg-4 col-sm-12 col-xs-12">
+    <h5>Add new task</h5>
+    <%= form_for :tasks do |f| %>
+      <%= f.label :title, class: "form-label text-muted font-weight-bold" %>
+      <%= f.text_field :title, class: "form-control" %>
+      <%= f.label :details, class: "form-label text-muted font-weight-bold" %>
+      <%= f.text_field :details, class: "form-control" %>
+      <br>
+      <%= f.submit class: "btn-warning" %>
+    <% end %>
+  </div>
+</div>
+<div class="row align-self-center mt-5">
+  <div class="col-lg-6 col-sm-12 col-xs-12">
+    <p class="text-muted">⮑ <%= link_to 'Back to all tasks', all_tasks_path %></p>
+  </div>
+</div>

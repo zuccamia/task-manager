@@ -1,0 +1,23 @@
+<div class="row align-self-end mt-5">
+  <div class="col">
+    <h5>Edit <%= @task.title %></h5>
+  </div>
+</div>
+<div class="row align-self-center">
+  <div class="col">
+    <%= form_for :tasks do |f| %>
+      <%= f.label :title, class: "form-label text-muted font-weight-bold" %>
+      <%= f.text_field :title, class: "form-control", value: "#{@task.title}" %>
+      <%= f.label :details, class: "form-label text-muted font-weight-bold" %>
+      <%= f.text_field :details, class: "form-control", value: "#{@task.details}" %>
+      <br>
+      <p><%= f.check_box("completed") %> <span>Nailed this!</span></p>
+      <%= f.submit class: "btn-warning" %>
+    <% end %>
+  </div>
+</div>
+<div class="row align-self-center mt-5">
+  <div class="col">
+    <p class="text-muted">⮑ <%= link_to 'Back to all tasks', all_tasks_path %></p>
+  </div>
+</div>

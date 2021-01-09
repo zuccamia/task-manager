@@ -1,0 +1,21 @@
+<div class="row align-self-center mt-5">
+  <div class="col">
+    <h1>🌿 Today's tasks</h1>
+  </div>
+</div>
+<div class="row align-self-center mt-3">
+  <div class="col">
+    <% @tasks.each do |task| %>
+      <% if task.completed == true %>
+      <p>🙌 <del><%= link_to "#{task.title}", task_path(task) %></del></p>
+      <% else %>
+      <p>👉 <%= link_to "#{task.title}", task_path(task) %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row align-self-start mt-3">
+  <div class="col">
+    <h5><%= link_to '➕ Add new task', new_task_path %></h5>
+  </div>
+</div>
