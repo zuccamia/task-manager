@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+  validates :title, presence: :true
 
   def completed?
     true if self.completed == true
